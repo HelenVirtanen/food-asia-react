@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-poppins: Poppins, sans-serif;
+
+  /* Colors */
+  --color-primary: #f97316;
+
+  /* Container paddings */
+  --container-center: true;
+  --container-padding-default: 1rem;
+  --container-padding-sm: 2rem;
+  --container-padding-lg: 4rem;
+  --container-padding-xl: 5rem;
+  --container-padding-2xl: 6rem;
+
+  /* Animation */
+  --animate-spin-slow: spin 20s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-[var(--color-primary)] text-white px-4 py-2 font-bold rounded-full;
+  }
+  .secondary-btn {
+    @apply bg-gray-400 text-black px-4 py-2 font-bold rounded-full;
+  }
+}
+
+@layer utilities {
+  .img-shadow {
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@media (min-width: 320px) {
+  :root {
+    --container-padding: var(--container-padding-default);
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --container-padding: var(--container-padding-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--container-padding-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: var(--container-padding-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --container-padding: var(--container-padding-2xl);
+  }
+}
