@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://helenvirtanen.github.io/food-asia-react/",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy:gh": "npm run build && gh-pages -d dist",
+    "deploy:netlify": "npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
