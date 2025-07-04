@@ -8,8 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy:gh": "cross-env DEPLOY_TARGET=gh vite build && gh-pages -d dist",
-    "deploy:netlify": "cross-env DEPLOY_TARGET=netlify vite build"
+    "build:gh": "vite build --config vite.config.gh.js",
+    "build:netlify": "vite build --config vite.config.netlify.js",
+    "deploy:netlify": "npm run build:netlify"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
